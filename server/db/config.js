@@ -20,11 +20,10 @@
 //   `gstate` JSON NOT NULL,
 //   `info` JSON NOT NULL,
 //   PRIMARY KEY (`id`));
-
-
+//
+//
 // CREATE TABLE `monopoly`.`players` (
 //   `id` INT NOT NULL AUTO_INCREMENT,
 //   `playerID` TEXT NOT NULL,
 //   `gameID` INT NOT NULL,
 //   PRIMARY KEY (`id`));
-

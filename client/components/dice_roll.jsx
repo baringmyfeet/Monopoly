@@ -584,7 +584,6 @@ class DiceRoll extends Component {
     })
     this.setState({
       userMoneyArray: updatedUserMoneyArray,
-      // buyPropertyButtonVisible: false,
       userPropertiesArray: updatedUserProperties
     })
     // console.log('after', updatedUserProperties)
