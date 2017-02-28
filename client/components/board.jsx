@@ -91,7 +91,6 @@ class Board extends Component {
             })
           }
         </div>
-        <Player name={this.props.username} dice={this.dice} piece='Hat' />
         <div className='board parent'>
           {
             this.props.players.map((player, index) => {
