@@ -1,10 +1,15 @@
 import io from 'socket.io-client'
-const socket = io.connect('/')
+const socket = io.connect('/', [
+  true
+])
 
 module.exports = {
   socket,
   init: (data) => {
     socket.emit('load', data)
+  },
+  refresh: (data) => {
+    socket.emit('refresh', data)
   },
   userJoined: (userInfo) => {
     socket.emit('user joined', userInfo)
@@ -28,6 +33,24 @@ module.exports = {
     socket.emit('send chat', data)
   },
   updateProps: (data) => {
-    socket.emit('property bought', data)
+    socket.emit('property update', data)
+  },
+  updateMoney: (data) => {
+    socket.emit('money update', data)
+  },
+  updateJailFree: (data) => {
+    socket.emit('jail free update', data)
+  },
+  loadGame: (gameID) => {
+    socket.emit('load game', gameID)
+  },
+  comment: (gameID, string) => {
+    socket.emit('comment', {gameID, string})
+  },
+  getUsers: (gameID) => {
+    socket.emit('get users', gameID)
+  },
+  trade: (playerSocket, offer, position, offerIndex) => {
+    socket.emit('trade offer', {playerSocket, offer, position, offerIndex})
   }
 }
